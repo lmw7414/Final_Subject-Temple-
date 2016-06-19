@@ -24,8 +24,9 @@ public class Player {
 				 p1.dollars-=70;
 				 p1.turn+=1;
 				 for (int i =0; i<30; i++){
-					 if(temples1[i] ==null){
+					 if(temples[i] ==null){
 						 temples[i] = new Temple (temple_name);
+						 i = i+1;
 						 break;
 					 }
 				 
@@ -37,6 +38,7 @@ public class Player {
 				 for (int i =0; i<30; i++){
 					 if(temples1[i] ==null){
 					 temples1[i] = new Small_temple(temple_name);
+					 i = i+1;
 					 break;
 				 }
 				 }
