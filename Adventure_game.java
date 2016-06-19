@@ -19,7 +19,7 @@ public class Adventure_game {
     
   }
   public static void play_game(Player p1){
-    while (true){
+    while (p1.zen <=100){
       Scanner in = new Scanner(System.in);
       System.out.println("What would you like to?");
       System.out.println("Meditate 0$, +1zen -> press 1");
@@ -47,15 +47,12 @@ public class Adventure_game {
       }
       p1.Calculating(p1);
       System.out.println("You have $"+ p1.dollars+" and "+p1.zen+ " Zen points");
-      if (p1.zen >=100){
-          System.out.println("Congrats, You become a master monk in "+p1.turn + " turn");
-          break;
-          
-          
-        }
+      
+
       
     }
-    
+    System.out.println("Congrats, You become a master monk in "+p1.turn + " turn");
+
     
     
   }
