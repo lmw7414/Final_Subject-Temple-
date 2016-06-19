@@ -4,8 +4,8 @@ public class Player {
 	 int zen;
 	 int turn;
 	 String name;
-	 Temple[] temples = new Temple[0]; 
-	 Small_temple[] temples1 = new Small_temple[0]; 
+	 Temple[] temples = new Temple[30]; 
+	 Small_temple[] temples1 = new Small_temple[30]; 
 	 public Player(String name){
 		 this.name = name;
 	 } 
@@ -23,36 +23,44 @@ public class Player {
 			 if(temple_num == 1){
 				 p1.dollars-=70;
 				 p1.turn+=1;
-				 Temple[] big = new Temple[30];
-				 for(int i=0; i<30; i++){
-					 big[i] = p1.temples[i];
-					 break;
-				 }
+				 for (int i =0; i<30; i++){
+					 if(temples1[i] ==null){
+						 temples[i] = new Temple (temple_name);
+						 break;
+					 }
 				 
+				 }
 			 }
 			 if(temple_num == 2){
 				 p1.dollars-=30;
 				 p1.turn+=1;
-				 Small_temple[] small = new Small_temple[30];
-				 for(int i=0; i<small.length; i++){
-					 small[i] = p1.temples1[i];
+				 for (int i =0; i<30; i++){
+					 if(temples1[i] ==null){
+					 temples1[i] = new Small_temple(temple_name);
 					 break;
 				 }
-				 break;
+				 }
+				
 			 }
+			 break;
 		 }
 	 }
 	 public static void Calculating(Player p1){
 	    	System.out.println("Collecting from all temples..");
-	    	for(int i =0; i<p1.temples.length; i++){
-	    		System.out.println("Collecting "+p1.temples[i].dollars+ " and "+p1.temples[i].zen
-	    				+ " from " + p1.temples[i].name);
+	    	
+	    	for(int i =0; i<30; i++){
+	    		if(p1.temples[i] == null){
+	    			break;
+	    		}
+	    		System.out.println("Collecting $15 and 5zen  from " + p1.temples[i].name);
 	    		p1.dollars+=15;
 	    		p1.zen +=5;
 	    	}
-	    	for(int i =0; i<p1.temples.length; i++){
-	    		System.out.println("Collecting "+p1.temples1[i].dollars+ " and "+p1.temples1[i].zen
-	    				+ " from " + p1.temples1[i].name);
+	    	for(int i =0; i<30; i++){
+	    		if(p1.temples1[i] == null){
+	    			break;
+	    		}
+	    		System.out.println("Collecting and 3zen from " + p1.temples1[i].name);
 	    		p1.zen +=3;
 	    	}
 	    	System.out.println("Done collecting from temples...");

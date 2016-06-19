@@ -16,6 +16,7 @@ public class Adventure_game {
       + "Good luck on becoming a monk");
     System.out.println("You have $"+p1.dollars+ " and "+p1.zen+"zen points");
     play_game(p1);
+    
   }
   public static void play_game(Player p1){
     while (true){
@@ -54,6 +55,7 @@ public class Adventure_game {
         }
       
     }
+    
     
     
   }
